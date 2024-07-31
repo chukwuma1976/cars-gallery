@@ -15,13 +15,17 @@ import { Carstatistics } from '../carstatistics';
 })
 export class CarStatisticsComponent {
   carList: any[] = [];
-  masterAgentTable: any;
   dataSource?: any;
 
   displayedColumns: string[] =
     ['Name', 'Miles per gallon', 'Cylinders', 'Displacement', 'Horsepower', 'Weight in lbs', 'Acceleration', 'Year', 'Origin'];
 
-  @ViewChild(MatPaginator) paginator?: MatPaginator;
+    @ViewChild(MatPaginator, {static: false})
+    set paginator(value: MatPaginator) {
+      if (this.dataSource){
+        this.dataSource.paginator = value;
+      }
+    }
 
   constructor() {
 
@@ -34,8 +38,10 @@ export class CarStatisticsComponent {
   }
 
   ngOnInit(){
-    this.carList = carStatistics.sort((a, b) => this.sortByName(a, b));
-    this.dataSource = new MatTableDataSource<Carstatistics>(this.carList);
+    this.carList = 
+      carStatistics
+      .sort((a, b) => this.sortByName(a, b));
+    this.dataSource = new MatTableDataSource<any>(this.carList);
     this.dataSource.paginator = this.paginator;
   }
 
