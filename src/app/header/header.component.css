@@ -1,0 +1,32 @@
+h1 {
+    font-size: 3.125rem;
+    color: darkred;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 5px solid whitesmoke;
+}
+
+img {
+  height: 50px;
+  width: auto;
+}
+
+/* .right-image {
+  margin-right: 400px;
+  margin-left: 20px;
+}
+
+.left-image {
+  margin-right: 20px;
+  margin-left: 100px;
+} */
+
+button {
+  margin-top: 10px;
+}

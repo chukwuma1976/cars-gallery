@@ -1,0 +1,8 @@
+.mat-column-Year {
+    font-style: italic;
+}
+
+.mat-column-Name {
+    font-weight: bolder;
+    color: darkblue;
+}

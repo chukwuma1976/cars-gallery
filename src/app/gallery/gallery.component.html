@@ -1,0 +1,17 @@
+<main>
+    <div id="navigation">
+        <div class="go-back">
+            <mat-icon class="info" fontIcon="home" [routerLink]="['/cars-home-page']"></mat-icon>
+        </div>
+        <p>{{currentCar.title}}</p>
+    </div>
+    <div id="car">
+        <div class="car-button" (click)="previous()">
+            <mat-icon class="nav" fontIcon="arrow_back_ios" *ngIf="index!==0"></mat-icon>
+        </div>
+        <img [src]="currentCar.image">
+        <div class="car-button"  (click)="next()">
+            <mat-icon class="nav" fontIcon="arrow_forward_ios" *ngIf="index!==maxIndex"></mat-icon>
+        </div>
+    </div>
+</main>

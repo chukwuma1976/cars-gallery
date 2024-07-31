@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+    <!-- <app-filter-table (nameEvent)="filterName($event)" (roleEvent)="filterRole($event)"></app-filter-table> -->
+    <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let car">{{car.Name.toUpperCase()}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Miles per gallon">
+            <th mat-header-cell *matHeaderCellDef>Miles per gallon</th>
+            <td mat-cell *matCellDef="let car">{{car.Miles_per_Gallon}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Cylinders">
+            <th mat-header-cell *matHeaderCellDef>Cylinders</th>
+            <td mat-cell *matCellDef="let car">{{car.Cylinders}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Displacement">
+            <th mat-header-cell *matHeaderCellDef>Displacement</th>
+            <td mat-cell *matCellDef="let car">{{car.Displacement}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Horsepower">
+            <th mat-header-cell *matHeaderCellDef>Horsepower</th>
+            <td mat-cell *matCellDef="let car">{{car.Horsepower}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Weight in lbs">
+            <th mat-header-cell *matHeaderCellDef>Weight in lbs</th>
+            <td mat-cell *matCellDef="let car">{{car.Weight_in_lbs}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Acceleration">
+            <th mat-header-cell *matHeaderCellDef>Acceleration</th>
+            <td mat-cell *matCellDef="let car">{{car.Acceleration}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Year">
+            <th mat-header-cell *matHeaderCellDef>Year</th>
+            <td mat-cell *matCellDef="let car">{{car.Year.split('-')[0]}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Origin">
+            <th mat-header-cell *matHeaderCellDef>Origin</th>
+            <td mat-cell *matCellDef="let car">{{car.Origin}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons aria-label="Select page of cars">
+    </mat-paginator>
+</div>
