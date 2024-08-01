@@ -14,7 +14,7 @@ import { Carstatistics } from '../carstatistics';
   styleUrl: './car-statistics.component.css'
 })
 export class CarStatisticsComponent {
-  carList: any[] = [];
+  carList: Carstatistics[] = [];
   dataSource?: any;
 
   displayedColumns: string[] =
@@ -41,7 +41,7 @@ export class CarStatisticsComponent {
     this.carList = 
       carStatistics
       .sort((a, b) => this.sortByName(a, b));
-    this.dataSource = new MatTableDataSource<any>(this.carList);
+    this.dataSource = new MatTableDataSource<Carstatistics>(this.carList);
     this.dataSource.paginator = this.paginator;
   }
 
