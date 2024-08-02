@@ -3,6 +3,7 @@ h1 {
     color: darkred;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    margin-right: 400px;
   }
 
 header {
@@ -20,12 +21,12 @@ img {
 /* .right-image {
   margin-right: 400px;
   margin-left: 20px;
-}
+} */
 
 .left-image {
   margin-right: 20px;
   margin-left: 100px;
-} */
+}
 
 button {
   margin-top: 10px;
